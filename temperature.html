@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溫度互換</title>
+</head>
+<body>
+    <p>
+        <label>攝氏</label>
+        <input id="inputCelsius" type="number" min="-273.15" placeholder="攝氏" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">(°C)
+        <!-- <input type="number" placeholder="攝氏" oninput="Converter(this.value)">(°C) -->
+        <br>
+        <label>華氏</label>
+        <input id="inputFahrenheit" type="number" min="-459.66999999999996" placeholder="華氏" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">(°F)
+        <!-- <input type="number" placeholder="華氏" oninput="Converter2(this.value)">(°F) -->
+
+    <script>
+function temperatureConverter(source,valNum) {
+  valNum = parseFloat(valNum);
+  var inputFahrenheit = document.getElementById("inputFahrenheit");
+  var inputCelsius = document.getElementById("inputCelsius");
+  var inputKelvin = document.getElementById("inputKelvin");
+  if (source=="inputFahrenheit") {
+    inputCelsius.value=((valNum-32)/1.8).toFixed(2);
+    inputKelvin.value=(((valNum-32)/1.8)+273.15).toFixed(2);
+  }
+  if (source=="inputCelsius") {
+    inputFahrenheit.value=((valNum*1.8)+32).toFixed(2);
+    inputKelvin.value=((valNum)+273.15).toFixed(2);
+  }
+}
+    </script>
+</body>
+</html>

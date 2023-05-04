@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Email</title>
+  </head>
+  <body>
+    <label>請輸入 Email：</label>
+    <input type="text" id="email-input">
+    <button onclick="validateEmailInput()">送出</button>
+    <p id="validation-result"></p>
+
+    <script>
+      function validateEmail(email) {
+        // 檢查email是否包含@
+        if (!/@/.test(email)) {
+          return false;
+        }
+        
+        // 檢查email中@出現的次數，如果超過一次則回傳false
+        const matches = email.match(/@/g);
+        if (matches && matches.length > 1) {
+          return false;
+        }
+        
+        // email格式驗證通過
+        return true;
+      }
+
+      function validateEmailInput() {
+        const emailInput = document.getElementById('email-input');
+        const validationResult = document.getElementById('validation-result');
+
+        if (validateEmail(emailInput.value)) {
+          validationResult.textContent = 'Email 格式正確';
+        } else {
+          validationResult.textContent = 'Email 格式無效';
+        }
+      }
+    </script>
+  </body>
+</html>

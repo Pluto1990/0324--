@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tree</title>
+</head>
+<body>
+    <script>
+const height = 8;
+
+for (let i = 1; i <= height; i++) {
+  let row = "";
+
+  const spaces = height - i;
+  const hashes = 2 * i - 1;
+
+  for (let j = 0; j < spaces; j++) {
+    row += " ";
+  }
+  for (let j = 0; j < hashes; j++) {
+    row += "^";
+  }
+
+  console.log(row);
+}
+
+const trunkSpaces = height - 1;
+let trunk = "";
+for (let i = 0; i < trunkSpaces; i++) {
+  trunk += " ";
+}
+trunk += "^";
+console.log(trunk);
+
+let trunk2 = "";
+for (let i = 0; i < trunkSpaces; i++) {
+  trunk2 += " ";
+}
+trunk2 += "^";
+console.log(trunk2);
+    </script>
+</body>
+</html>

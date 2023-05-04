@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my_birthday</title>
+</head>
+<body>
+    <script>
+    var my_birthday_year=prompt("請輸入你的出生年份");
+    var my_birthday_month=prompt("請輸入你的出生月份");
+    var my_birthday_day=prompt("請輸入你的出生日期");
+var year = Number(my_birthday_year);
+var month = Number(my_birthday_month) - 1;
+var day = Number(my_birthday_day);
+var today = new Date();
+var my_age = today.getFullYear() - year;
+if (today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)) {
+  my_age--;
+}
+    document.write("你今年"+ my_age +"歲");
+    </script>
+</body>
+</html>
